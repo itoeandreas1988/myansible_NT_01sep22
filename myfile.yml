@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  become: yes
+  tasks:
+  - name:
+    ping:
+  - name: i want to install webserver
+    apt:
+      name: apache2
+      state: absent
+  - name: I want to install tree
+    apt:
+      name: tree
+      state: present
+
+  - name: I want to install wget
+    apt:
+      name: wget
+      state: present
+
+  - name:
+    apt:
+      name: ngnix
+      state: present
