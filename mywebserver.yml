@@ -7,7 +7,8 @@
       name: apache2
       state: present
 
-  - name: I want to start apache2 webserver in the node machine
-    service:
-      name: apache2
-      state: restarted
+  handlers:
+    - name: restart-apache
+      service:
+        name: apache2
+        state: restarted
